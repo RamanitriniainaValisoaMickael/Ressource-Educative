@@ -1,6 +1,6 @@
 <template>
   <RouterView></RouterView>
-  <!-- <div id="app">
+  <div id="app">
     <nav>
       <router-link to="/accueil">Accueil</router-link> | 
       <router-link to="/cours">Cours</router-link> | 
@@ -9,7 +9,7 @@
       <router-link to="/contact">Contact</router-link>
     </nav>
     <router-view></router-view>
-  </div> -->
+  </div>
 </template>
 <script>
 import { RouterLink, RouterView } from 'vue-router';
