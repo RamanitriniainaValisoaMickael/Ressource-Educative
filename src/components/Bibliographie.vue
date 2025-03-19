@@ -1,4 +1,5 @@
 <template>
+    <Navigation></Navigation>
     <div class="bibliographie">
       <h1>Références théoriques</h1>
       <div>
@@ -13,6 +14,7 @@
   </template>
   
   <script setup>
+  import Navigation from './Navigation.vue';
   import { useHead } from '@vueuse/head';
   useHead({
     title: 'Bibliographie',

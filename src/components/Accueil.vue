@@ -1,6 +1,7 @@
 <script setup>
 import { useHead } from '@vueuse/head';
 import { onMounted } from "vue";
+import Navigation from './Navigation.vue';
 
 const GA_ID = 'G-0GXEPP1BKR';
 
@@ -36,6 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <Navigation></Navigation>
   <div class="accueil">
     <h1>Bienvenue sur notre plateforme éducative</h1>
     <p>Découvrez des ressources pédagogiques pour approfondir vos connaissances.</p>

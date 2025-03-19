@@ -1,4 +1,5 @@
 <template>
+  <Navigation></Navigation>
     <div class="contact">
       <h1>Contactez-nous</h1>
       <p>Pour toute question, vous pouvez nous contacter aux coordonnées suivantes :</p>
@@ -12,6 +13,7 @@
   
   <script setup>
     import { useHead } from '@vueuse/head';
+    import Navigation from './Navigation.vue';
     useHead({
       title: 'Contact',
       

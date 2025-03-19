@@ -1,4 +1,5 @@
 <template>
+  <Navigation></Navigation>
   <div class="cours">
     <h1>Liste des modules</h1>
     <ul>
@@ -12,6 +13,7 @@
 
 <script setup>
   import { useHead } from '@vueuse/head';
+  import Navigation from './Navigation.vue';
   useHead({
   title: 'Cours',
   

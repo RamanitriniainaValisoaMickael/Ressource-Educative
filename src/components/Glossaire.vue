@@ -1,14 +1,5 @@
 <template>
-     <div id="app">
-    <nav>
-      <router-link to="/">Accueil</router-link> |
-      <router-link to="/cours">Cours</router-link> |
-      <router-link to="/bibliographie">Bibliographie</router-link> |
-      <router-link to="/glossaire">Glossaire</router-link> |
-      <router-link to="/contact">Contact</router-link>
-    </nav>
-    <router-view></router-view>
-  </div>
+     <Navigation></Navigation>
     <div class="glossaire">
       <h1>Lexique des termes spécialisés</h1>
       <div>
@@ -24,6 +15,7 @@
   
   <script setup>
   import { useHead } from '@vueuse/head';
+  import Navigation from './Navigation.vue';
   useHead({
   title: 'Glossaire',
 });

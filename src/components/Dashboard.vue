@@ -1,4 +1,5 @@
 <template>
+    <Navigation></Navigation>
     <div class="dashboard">
       <h1>Tableau de bord</h1>
       <p>Bienvenue, {{ user.email }} !</p>
@@ -8,6 +9,7 @@
   
   <script>
   import { useHead } from '@vueuse/head';
+  import Navigation from './Navigation.vue';
   useHead({
   title: 'Dashboard',
 });
