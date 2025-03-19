@@ -18,6 +18,8 @@ useHead({
 });
 
 onMounted(() => {
+  console.log("coucou");
+  
   try {
     window.dataLayer = window.dataLayer || [];
     function gtag() {
