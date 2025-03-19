@@ -1,4 +1,14 @@
 <template>
+     <div id="app">
+    <nav>
+      <router-link to="/">Accueil</router-link> |
+      <router-link to="/cours">Cours</router-link> |
+      <router-link to="/bibliographie">Bibliographie</router-link> |
+      <router-link to="/glossaire">Glossaire</router-link> |
+      <router-link to="/contact">Contact</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
     <div class="bibliographie">
       <h1>Références théoriques</h1>
       <div>
