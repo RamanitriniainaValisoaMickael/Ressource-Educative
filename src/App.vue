@@ -1,5 +1,5 @@
 <template>
-  <RouterView></RouterView>
+  <!-- <RouterView></RouterView> -->
   <div id="app">
     <nav>
       <router-link to="/">Accueil</router-link> | 
