@@ -85,7 +85,7 @@
   }
   </script>
   
-  <style scoped>
+  <!-- <style scoped>
   .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -142,4 +142,4 @@
       grid-template-columns: 1fr;
     }
   }
-  </style>
+  </style> -->
