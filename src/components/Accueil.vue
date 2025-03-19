@@ -10,10 +10,10 @@
 </template>
 
 <script setup>
-import { useHead } from '@vueuse/head'
-import { onMounted } from 'vue'
+import { useHead } from '@vueuse/head';
+import { onMounted } from "vue";
 
-const GA_ID = 'G-0GXEPP1BKR'
+const GA_ID = 'G-0GXEPP1BKR';
 
 useHead({
   title: 'Accueil',
@@ -29,14 +29,19 @@ useHead({
 });
 
 onMounted(() => {
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    window.dataLayer.push(arguments)
+  try {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+    
+    console.log("Succès : Google Analytics configuré.");
+  } catch (error) {
+    console.error("Échec : Erreur lors de la configuration de Google Analytics", error);
   }
-  gtag('js', new Date());
-  gtag('config', GA_ID);
 });
-
 </script>
 
 <style scoped>
