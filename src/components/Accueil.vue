@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { useHead } from '@vueuse/head'
 import { onMounted } from 'vue'
 
@@ -26,20 +26,17 @@ useHead({
   meta: [
     { name: 'description', content: 'Plateforme éducative proposant des ressources pédagogiques' }
   ]
-})
+});
 
 onMounted(() => {
   window.dataLayer = window.dataLayer || []
   function gtag() {
     window.dataLayer.push(arguments)
   }
-  gtag('js', new Date())
-  gtag('config', GA_ID)
-})
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+});
 
-export default {
-  name: 'AccueilPage'
-}
 </script>
 
 <style scoped>
