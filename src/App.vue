@@ -1,14 +1,5 @@
 <template>
-  <!-- <RouterView></RouterView> -->
-  <div id="app">
-    <nav>
-      <router-link to="/">Accueil</router-link> | 
-      <router-link to="/cours">Cours</router-link> | 
-      <router-link to="/bibliographie">Bibliographie</router-link> | 
-      <router-link to="/glossaire">Glossaire</router-link> | 
-      <router-link to="/contact">Contact</router-link>
-    </nav>
-  </div>
+  <RouterView></RouterView>
 </template>
 <script>
 import { RouterLink, RouterView } from 'vue-router';
