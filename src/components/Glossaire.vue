@@ -22,10 +22,11 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    name: 'GlossairePage',
-  };
+  <script setup>
+  import { useHead } from '@vueuse/head';
+  useHead({
+  title: 'Glossaire',
+});
   </script>
   
   <style scoped>

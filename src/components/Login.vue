@@ -17,6 +17,10 @@
   </template>
   
   <script>
+  import { useHead } from '@vueuse/head';
+  useHead({
+  title: 'Login',
+});
   export default {
     name: 'LoginPage',
     data() {

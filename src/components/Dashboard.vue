@@ -7,6 +7,10 @@
   </template>
   
   <script>
+  import { useHead } from '@vueuse/head';
+  useHead({
+  title: 'Dashboard',
+});
   export default {
     name: 'DashboardPage',
     data() {

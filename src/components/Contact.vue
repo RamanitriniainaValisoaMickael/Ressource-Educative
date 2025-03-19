@@ -1,14 +1,4 @@
 <template>
-     <div id="app">
-    <nav>
-      <router-link to="/">Accueil</router-link> |
-      <router-link to="/cours">Cours</router-link> |
-      <router-link to="/bibliographie">Bibliographie</router-link> |
-      <router-link to="/glossaire">Glossaire</router-link> |
-      <router-link to="/contact">Contact</router-link>
-    </nav>
-    <router-view></router-view>
-  </div>
     <div class="contact">
       <h1>Contactez-nous</h1>
       <p>Pour toute question, vous pouvez nous contacter aux coordonnées suivantes :</p>
@@ -20,10 +10,12 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    name: 'ContactPage',
-  };
+  <script setup>
+    import { useHead } from '@vueuse/head';
+    useHead({
+      title: 'Contact',
+      
+    });
   </script>
   
   <style scoped>
