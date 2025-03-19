@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <RouterView></RouterView>
   <div id="app">
     <nav>
@@ -29,4 +29,11 @@ nav a.router-link-exact-active {
   color: #42b983;
   font-weight: bold;
 }
-</style>
+</style> -->
+
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+<template>
+  <RouterView />
+</template>

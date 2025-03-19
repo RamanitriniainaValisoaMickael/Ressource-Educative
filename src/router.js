@@ -8,13 +8,13 @@ import Login from './components/Login.vue';
 import Dashboard from './components/Dashboard.vue';
 
 const routes = [
-  { path: '/', component: Accueil },
-  { path: '/cours', component: Cours },
-  { path: '/bibliographie', component: Bibliographie },
-  { path: '/glossaire', component: Glossaire },
-  { path: '/contact', component: Contact },
-  { path: '/login', component: Login },
-  { path: '/dashboard', component: Dashboard },
+  { path: '/', name:Accueil,component: Accueil },
+  { path: '/cours', name:Cours,component: Cours },
+  { path: '/bibliographie', name:Bibliographie,component: Bibliographie },
+  { path: '/glossaire', name:Glossaire,component: Glossaire },
+  { path: '/contact', name:Contact,component: Contact },
+  { path: '/login', name:Login,component: Login },
+  { path: '/dashboard', name:Dashboard,component: Dashboard },
 ];
 
 const router = createRouter({
