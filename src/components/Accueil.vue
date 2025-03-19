@@ -10,9 +10,36 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
+import { onMounted } from 'vue'
+
+const GA_ID = 'G-0GXEPP1BKR'
+
+useHead({
+  title: 'Accueil',
+  script: [
+    {
+      async: true,
+      src: `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
+    }
+  ],
+  meta: [
+    { name: 'description', content: 'Plateforme éducative proposant des ressources pédagogiques' }
+  ]
+})
+
+onMounted(() => {
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    window.dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+  gtag('config', GA_ID)
+})
+
 export default {
-  name: 'AccueilPage',
-};
+  name: 'AccueilPage'
+}
 </script>
 
 <style scoped>
