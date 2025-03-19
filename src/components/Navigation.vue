@@ -10,7 +10,7 @@
     <router-view></router-view>
   </div>
 </template>
-<style>
+<style scoped>
 nav {
   padding: 20px;
   text-align: center;
