@@ -1,25 +1,37 @@
 <template>
-    <div class="cours">
-      <h1>Modules disponibles</h1>
-      <ul>
-        <li v-for="(module, index) in modules" :key="index">
-          {{ module.titre }} - {{ module.description }}
-        </li>
-      </ul>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'CoursPage',
-    data() {
-      return {
-        modules: [
-          { titre: 'Mathématiques', description: 'Algèbre et géométrie' },
-          { titre: 'Physique', description: 'Mécanique classique' },
-          { titre: 'Informatique', description: 'Algorithmique' }
-        ]
-      }
-    }
-  }
-  </script>
+  <div class="cours">
+    <h1>Liste des modules</h1>
+    <ul>
+      <li>Mathématiques</li>
+      <li>Physique</li>
+      <li>Informatique</li>
+      <li>Histoire</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CoursPage',
+};
+</script>
+
+<style scoped>
+.cours {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f8f9fa;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+</style>
