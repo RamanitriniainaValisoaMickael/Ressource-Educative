@@ -1,0 +1,126 @@
+<script setup>
+import { useHead } from '@vueuse/head';
+import { ref, onMounted } from 'vue';
+
+const GA_MEASUREMENT_ID = 'G-0GXEPP1BKR';
+const visitorStats = ref({
+  today: 0,
+  total: 0,
+  realTime: 0
+});
+
+useHead({
+  title: 'Statistiques Visiteurs',
+  script: [
+    {
+      async: true,
+      src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    },
+    {
+      children: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_MEASUREMENT_ID}');
+      `
+    }
+  ]
+});
+
+onMounted(() => {
+  // Simulation de données GA4
+  setTimeout(() => {
+    visitorStats.value = {
+      today: Math.floor(Math.random() * 1000),
+      total: Math.floor(Math.random() * 5000),
+      realTime: Math.floor(Math.random() * 50)
+    };
+  }, 2000);
+});
+</script>
+
+<template>
+  <div class="analytics-container">
+    <h1>Statistiques des Visiteurs</h1>
+    
+    <div v-if="visitorStats.today === 0" class="loading">
+      <p>Chargement des données...</p>
+    </div>
+
+    <div v-else class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">{{ visitorStats.today }}</div>
+        <div class="stat-label">Visites aujourd'hui</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-value">{{ visitorStats.total }}</div>
+        <div class="stat-label">Visites totales</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-value">{{ visitorStats.realTime }}</div>
+        <div class="stat-label">En temps réel</div>
+      </div>
+    </div>
+
+    <noscript>
+      <iframe :src="`https://www.googletagmanager.com/ns.html?id=${GA_MEASUREMENT_ID}`"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  </div>
+</template>
+
+<style scoped>
+.analytics-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+</style>
